@@ -1,0 +1,21 @@
+{
+  "name": "JEEBA IMÔLÊ - BTP & Hydraulique",
+  "short_name": "JEEBA BTP",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "description": "Votre partenaire de confiance en BTP et ingénierie hydraulique.",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/xqNF9GMT/logo-jeeba.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.postimg.cc/xqNF9GMT/logo-jeeba.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

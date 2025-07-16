@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEEBA IMÔLÊ - BTP & Hydraulique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="manifest" href="./manifest.json">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9fafb; scroll-behavior: smooth; }
+        :root { --logo-color: #c21a68; --logo-color-hover: #9d174d; --primary-color: #1e3a8a; --text-dark: #111827; --text-light: #4b5563; }
+        .nav-link { position: relative; transition: color 0.3s; }
+        .nav-link.active { color: var(--primary-color); font-weight: 600; }
+        .nav-link.active::after { width: 100%; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: var(--logo-color); transition: width 0.3s; }
+        .nav-link:hover { color: var(--primary-color); }
+        .nav-link:hover::after { width: 100%; }
+        .page-section { display: none; }
+        .page-section.active { display: block; }
+        @keyframes slideInUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .fade-in-up { animation: slideInUp 0.6s ease-out forwards; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3" data-page="accueil">
+                <img src="https://i.postimg.cc/xqNF9GMT/logo-jeeba.png" alt="Logo Jeeba" class="h-16">
+                <div>
+                    <span class="text-xl font-bold" style="color: var(--logo-color);">JEEBA IMÔLÊ</span>
+                    <p class="text-sm font-semibold" style="color: var(--primary-color);">BTP & HYDRAULIQUE</p>
+                </div>
+            </a>
+            <nav id="desktop-nav" class="hidden lg:flex items-center space-x-8 text-lg">
+                <a href="#" class="nav-link active" data-page="accueil">Accueil</a>
+                <a href="#" class="nav-link" data-page="services">Services</a>
+                <a href="#" class="nav-link" data-page="projets">Nos Projets</a>
+                <a href="#" class="nav-link" data-page="a-propos">À Propos</a>
+                <a href="#" class="nav-link" data-page="contact">Contact</a>
+            </nav>
+            <div class="hidden lg:block">
+                <a href="#" class="text-white font-bold py-3 px-6 rounded-lg transition duration-300" style="background-color: var(--logo-color);" onmouseover="this.style.backgroundColor='var(--logo-color-hover)'" onmouseout="this.style.backgroundColor='var(--logo-color)'" data-page="devis">
+                    Demander un Devis
+                </a>
+            </div>
+            <div class="lg:hidden">
+                <button id="menu-button" class="text-gray-700 hover:text-[color:var(--primary-color)]"><i data-lucide="menu" class="h-8 w-8"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <nav class="flex flex-col p-4 space-y-2">
+                <a href="#" class="nav-link-mobile active px-4 py-2 rounded-md" data-page="accueil">Accueil</a>
+                <a href="#" class="nav-link-mobile px-4 py-2 rounded-md" data-page="services">Services</a>
+                <a href="#" class="nav-link-mobile px-4 py-2 rounded-md" data-page="projets">Nos Projets</a>
+                <a href="#" class="nav-link-mobile px-4 py-2 rounded-md" data-page="a-propos">À Propos</a>
+                <a href="#" class="nav-link-mobile px-4 py-2 rounded-md" data-page="contact">Contact</a>
+                <a href="#" class="text-white text-center mt-4 font-bold py-3 px-6 rounded-lg transition duration-300" style="background-color: var(--logo-color);" onmouseover="this.style.backgroundColor='var(--logo-color-hover)'" onmouseout="this.style.backgroundColor='var(--logo-color)'" data-page="devis">
+                    Demander un Devis
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="accueil" class="page-section active">
+            <div class="relative h-[60vh] bg-gray-900 flex items-center justify-center text-center text-white p-6">
+                <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://i.ibb.co/pX5YQjJc/hero-chantier.jpg');"></div>
+                <div class="relative z-10">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight fade-in-up">Bâtir l'Avenir, Ensemble</h1>
+                    <p class="text-lg md:text-xl mb-8 fade-in-up text-gray-300" style="animation-delay: 0.2s;">Votre partenaire de confiance en BTP et ingénierie hydraulique, du concept à la réalisation et plus encore.</p>
+                    <a href="#" class="bg-[color:var(--logo-color)] hover:bg-pink-800 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 fade-in-up" style="animation-delay: 0.4s;" data-page="devis">
+                        Demander un Devis
+                    </a>
+                </div>
+            </div>
+            <div class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold" style="color: var(--text-dark);">Nos Domaines d'Expertise</h2>
+                        <p class="text-lg mt-2 mx-auto max-w-2xl" style="color: var(--text-light);">Une synergie de compétences pour la réussite de vos projets les plus ambitieux.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                        <div class="service-card bg-white p-8 rounded-lg shadow-lg text-center transition duration-300"><div class="text-[color:var(--logo-color)] mb-4 inline-block"><i data-lucide="hard-hat" class="h-10 w-10"></i></div><h3 class="text-2xl font-bold mb-3">Études et Travaux BTP</h3><p style="color: var(--text-light);">Nous réalisons des études de faisabilité, la conception de plans, et la supervision de tous types de chantiers.</p></div>
+                        <div class="service-card bg-white p-8 rounded-lg shadow-lg text-center transition duration-300"><div class="text-[color:var(--logo-color)] mb-4 inline-block"><i data-lucide="waves" class="h-10 w-10"></i></div><h3 class="text-2xl font-bold mb-3">Hydraulique</h3><p style="color: var(--text-light);">Spécialistes en gestion de l'eau, nous concevons des systèmes d'adduction d'eau, d'assainissement et d'irrigation.</p></div>
+                        <div class="service-card bg-white p-8 rounded-lg shadow-lg text-center transition duration-300"><div class="text-[color:var(--logo-color)] mb-4 inline-block"><i data-lucide="ruler" class="h-10 w-10"></i></div><h3 class="text-2xl font-bold mb-3">Géomètre Topographie</h3><p style="color: var(--text-light);">Nous assurons des levés topographiques précis et l'implantation d'ouvrages pour garantir la justesse de vos projets.</p></div>
+                    </div>
+                    <div class="text-center mt-12">
+                        <a href="#" class="text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300" style="background-color: var(--logo-color);" onmouseover="this.style.backgroundColor='var(--logo-color-hover)'" onmouseout="this.style.backgroundColor='var(--logo-color)'" data-page="services">
+                            Voir tous nos services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="page-section"><div class="container mx-auto px-6 py-20"><div class="text-center mb-16"><h2 class="text-4xl font-bold" style="color: var(--text-dark);">Nos Services</h2><p class="text-lg mt-2 mx-auto max-w-2xl" style="color: var(--text-light);">Nous offrons une gamme complète de services pour couvrir tous les aspects de votre projet, de la conception à la réalisation.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center"><div class="service-card bg-white p-8 rounded-lg shadow-lg transition duration-300"><div class="text-center"><div class="text-[color:var(--logo-color)] mb-4 inline-block"><i data-lucide="graduation-cap" class="h-10 w-10"></i></div><h3 class="text-2xl font-bold mb-3">Formation aux Métiers</h3></div><p style="color: var(--text-light);" class="text-justify">Nous proposons des formations certifiantes pour les professionnels du BTP, afin de renforcer les compétences techniques et managériales sur le terrain.</p></div><div class="service-card bg-white p-8 rounded-lg shadow-lg transition duration-300"><div class="text-center"><div class="text-[color:var(--logo-color)] mb-4 inline-block"><i data-lucide="hard-hat" class="h-10 w-10"></i></div><h3 class="text-2xl font-bold mb-3">Études et Travaux BTP</h3></div><p style="color: var(--text-light);" class="text-justify">Nous réalisons des études de faisabilité, la conception de plans, et la supervision de tous types de chantiers de construction, du résidentiel à l'industriel.</p></div><div class="service-card bg-white p-8 rounded-lg shadow-lg transition duration-300"><div class="text-center"><div class="text-[color:var(--logo-color)] mb-4 inline-block"><i data-lucide="waves" class="h-10 w-10"></i></div><h3 class="text-2xl font-bold mb-3">Hydraulique</h3></div><p style="color: var(--text-light);" class="text-justify">Spécialistes en gestion de l'eau, nous concevons et mettons en œuvre des systèmes d'adduction d'eau potable, d'assainissement et d'irrigation.</p></div><div class="service-card bg-white p-8 rounded-lg shadow-lg transition duration-300"><div class="text-center"><div class="text-[color:var(--logo-color)] mb-4 inline-block"><i data-lucide="ruler" class="h-10 w-10"></i></div><h3 class="text-2xl font-bold mb-3">Géomètre Topographie</h3></div><p style="color: var(--text-light);" class="text-justify">Nos géomètres-topographes assurent des levés topographiques précis, l'implantation d'ouvrages et le suivi géodésique pour garantir la justesse de vos projets.</p></div><div class="service-card bg-white p-8 rounded-lg shadow-lg transition duration-300"><div class="text-center"><div class="text-[color:var(--logo-color)] mb-4 inline-block"><i data-lucide="map" class="h-10 w-10"></i></div><h3 class="text-2xl font-bold mb-3">SIG (Système d'Information Géographique)</h3></div><p style="color: var(--text-light);" class="text-justify">Nous développons des solutions SIG pour l'analyse spatiale, la gestion de données géographiques et l'aide à la décision pour l'aménagement du territoire.</p></div><div class="service-card bg-white p-8 rounded-lg shadow-lg transition duration-300"><div class="text-center"><div class="text-[color:var(--logo-color)] mb-4 inline-block"><i data-lucide="zap" class="h-10 w-10"></i></div><h3 class="text-2xl font-bold mb-3">Électricité</h3></div><p style="color: var(--text-light);" class="text-justify">Conception et installation de réseaux électriques pour bâtiments et infrastructures, en respectant les normes de sécurité les plus strictes.</p></div></div></div></section>
+
+        <section id="projets" class="page-section py-20"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-4xl font-bold" style="color: var(--text-dark);">Nos Projets Réalisés</h2><p class="text-lg mt-2" style="color: var(--text-light);">La preuve de notre savoir-faire en images.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-white rounded-lg shadow-lg overflow-hidden group"><img src="https://i.ibb.co/yWp4F0H/projet-btp-2.jpg" alt="Immeuble résidentiel moderne" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold mb-2">Immeuble Résidentiel "Les Flamboyants"</h3><p class="text-sm" style="color: var(--text-light);">Cotonou - Études & Travaux BTP</p></div></div><div class="bg-white rounded-lg shadow-lg overflow-hidden group"><img src="https://i.ibb.co/8c8zLg8G/projet-hydraulique-2.jpg" alt="Chantier de canalisations d'eau" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold mb-2">Usine de traitement et Réseau d'Adduction d'Eau</h3><p class="text-sm" style="color: var(--text-light);">Parakou - Ingénierie Hydraulique</p></div></div><div class="bg-white rounded-lg shadow-lg overflow-hidden group"><img src="https://i.ibb.co/W4N7YyF2/projet-topo-2.jpg" alt="Géomètre noir utilisant un théodolite" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold mb-2">Levé Topographique Parc Industriel</h3><p class="text-sm" style="color: var(--text-light);">Abomey-Calavi - Géomètre Topographie</p></div></div><div class="bg-white rounded-lg shadow-lg overflow-hidden group"><img src="https://i.ibb.co/k5yZ7BQq/projet-electricite-2.jpg" alt="Électricien noir travaillant sur un panneau électrique" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold mb-2">Installation Électrique d'une usine</h3><p class="text-sm" style="color: var(--text-light);">Sèmè-Kpodji - Électricité</p></div></div><div class="bg-white rounded-lg shadow-lg overflow-hidden group"><img src="https://i.ibb.co/L8pQzJk5/projet-sig-2.jpg" alt="Professionnelle noire analysant des cartes sur un ordinateur" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold mb-2">Cartographie SIG d'une Commune</h3><p class="text-sm" style="color: var(--text-light);">Porto-Novo - SIG</p></div></div><div class="bg-white rounded-lg shadow-lg overflow-hidden group"><img src="https://i.ibb.co/k1zZ62N/projet-formation-2.jpg" alt="Groupe de professionnels divers en session de formation" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold mb-2">Formation en conception, étude et la gestion de chantier</h3><p class="text-sm" style="color: var(--text-light);">Centre de Formation - Formation aux Métiers</p></div></div></div></div></section>
+
+        <section id="a-propos" class="page-section"><div class="container mx-auto px-6 py-20"><div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20"><div class="rounded-lg overflow-hidden shadow-2xl"><img src="https://i.ibb.co/d1Q4Sgqj/a-propos-equipe-2.jpg" alt="Équipe d'ingénieurs sur un chantier" class="w-full h-full object-cover"></div><div><h2 class="text-4xl font-bold mb-4" style="color: var(--text-dark);">Notre Histoire, Votre Confiance</h2><p class="text-lg mb-4 text-justify" style="color: var(--text-light);">Fondée en 2010, JEEBA IMÔLÊ BTP & HYDRAULIQUE est née d'une passion pour la construction et d'une volonté de participer au développement de notre nation. Notre mission est de livrer des projets d'excellence qui allient innovation, durabilité et respect des normes internationales.</p><p class="text-lg text-justify" style="color: var(--text-light);">Avec plus d'une décennie d'expérience, nous avons bâti une réputation solide basée sur la qualité de notre travail, notre intégrité et notre engagement envers la satisfaction de nos clients.</p></div></div><div class="text-center mb-16"><h2 class="text-4xl font-bold" style="color: var(--text-dark);">Nos Valeurs Fondamentales</h2><p class="text-lg mt-2 mx-auto max-w-2xl" style="color: var(--text-light);">Quatre piliers qui guident chacune de nos actions.</p></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"><div class="bg-white p-6 rounded-lg shadow-lg text-center"><div class="text-[color:var(--logo-color)] mb-3 inline-block"><i data-lucide="shield-check" class="h-10 w-10"></i></div><h3 class="text-xl font-bold mb-2">Qualité</h3><p style="color: var(--text-light);">Un engagement sans compromis pour l'excellence et la durabilité.</p></div><div class="bg-white p-6 rounded-lg shadow-lg text-center"><div class="text-[color:var(--logo-color)] mb-3 inline-block"><i data-lucide="hard-hat" class="h-10 w-10"></i></div><h3 class="text-xl font-bold mb-2">Sécurité</h3><p style="color: var(--text-light);">La sécurité de nos équipes et de nos chantiers est notre priorité absolue.</p></div><div class="bg-white p-6 rounded-lg shadow-lg text-center"><div class="text-[color:var(--logo-color)] mb-3 inline-block"><i data-lucide="lightbulb" class="h-10 w-10"></i></div><h3 class="text-xl font-bold mb-2">Innovation</h3><p style="color: var(--text-light);">Nous intégrons les dernières technologies pour des solutions plus performantes.</p></div><div class="bg-white p-6 rounded-lg shadow-lg text-center"><div class="text-[color:var(--logo-color)] mb-3 inline-block"><i data-lucide="handshake" class="h-10 w-10"></i></div><h3 class="text-xl font-bold mb-2">Respect</h3><p style="color: var(--text-light);">Respect de nos clients, de nos partenaires et de l'environnement.</p></div></div></div></section>
+
+        <section id="devis" class="page-section py-20"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-4xl font-bold" style="color: var(--text-dark);">Demander un Devis</h2><p class="text-lg mt-2" style="color: var(--text-light);">Remplissez ce formulaire pour obtenir une estimation détaillée pour votre projet.</p></div><div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg"><form action="#" method="POST"><div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5"><div><label for="devis-nom" class="block font-semibold mb-2 text-gray-700">Nom Complet</label><input type="text" id="devis-nom" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary-color);" required></div><div><label for="devis-email" class="block font-semibold mb-2 text-gray-700">Email</label><input type="email" id="devis-email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary-color);" required></div><div><label for="devis-tel" class="block font-semibold mb-2 text-gray-700">Téléphone</label><input type="tel" id="devis-tel" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary-color);" required></div><div><label for="devis-service" class="block font-semibold mb-2 text-gray-700">Type de Service</label><select id="devis-service" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary-color);" required><option>Choisir un service...</option><option>Études et Travaux BTP</option><option>Hydraulique</option><option>Géomètre Topographie</option><option>SIG</option><option>Électricité</option><option>Formation aux Métiers</option></select></div></div><div class="mb-6"><label for="devis-adresse" class="block font-semibold mb-2 text-gray-700">Adresse du Projet</label><input type="text" id="devis-adresse" placeholder="Ex: Cotonou, Quartier Haie Vive" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary-color);"></div><div class="mb-6"><label for="devis-message" class="block font-semibold mb-2 text-gray-700">Description du Projet</label><textarea id="devis-message" rows="6" placeholder="Veuillez décrire votre projet en détail..." class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary-color);" required></textarea></div><div class="text-center"><button type="submit" class="w-full text-white font-bold py-3 px-10 rounded-lg text-lg transition duration-300" style="background-color: var(--logo-color);" onmouseover="this.style.backgroundColor='var(--logo-color-hover)'" onmouseout="this.style.backgroundColor='var(--logo-color)'">Envoyer la Demande</button></div></form></div></div></section>
+
+        <section id="contact" class="page-section py-20"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-4xl font-bold" style="color: var(--text-dark);">Contactez-nous</h2><p class="text-lg mt-2" style="color: var(--text-light);">Pour toute question générale, notre équipe est à votre écoute.</p></div><div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12"><div class="bg-white p-8 rounded-lg shadow-lg"><form action="#" method="POST"><div class="mb-5"><label for="contact-nom" class="block font-semibold mb-2 text-gray-700">Nom Complet</label><input type="text" id="contact-nom" placeholder="Votre nom" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary-color);" required></div><div class="mb-5"><label for="contact-email" class="block font-semibold mb-2 text-gray-700">Email</label><input type="email" id="contact-email" placeholder="Votre email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary-color);" required></div><div class="mb-5"><label for="contact-sujet" class="block font-semibold mb-2 text-gray-700">Sujet</label><input type="text" id="contact-sujet" placeholder="Sujet de votre message" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary-color);" required></div><div class="mb-6"><label for="contact-message" class="block font-semibold mb-2 text-gray-700">Message</label><textarea id="contact-message" rows="5" placeholder="Votre question..." class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2" style="--tw-ring-color: var(--primary-color);" required></textarea></div><div class="text-center"><button type="submit" class="w-full bg-[color:var(--logo-color)] hover:bg-pink-800 text-white font-bold py-3 px-10 rounded-lg text-lg transition duration-300">Envoyer le Message</button></div></form></div><div class="space-y-8"><div class="bg-white p-6 rounded-lg shadow-lg flex items-start gap-4"><div class="text-[color:var(--logo-color)] mt-1"><i data-lucide="map-pin" class="h-8 w-8"></i></div><div><h3 class="text-xl font-bold" style="color: var(--logo-color);">Notre Bureau</h3><p class="text-lg text-gray-600">123 Avenue AYOSSO les Bâtisseurs, Cotonou, Bénin</p></div></div><div class="bg-white p-6 rounded-lg shadow-lg flex items-start gap-4"><div class="text-[color:var(--logo-color)] mt-1"><i data-lucide="mail" class="h-8 w-8"></i></div><div><h3 class="text-xl font-bold" style="color: var(--logo-color);">Email</h3><p class="text-lg text-gray-600">contact@jeebaimole-btp.com</p></div></div><div class="bg-white p-6 rounded-lg shadow-lg flex items-start gap-4"><div class="text-[color:var(--logo-color)] mt-1"><i data-lucide="phone" class="h-8 w-8"></i></div><div><h3 class="text-xl font-bold" style="color: var(--logo-color);">Téléphone</h3><p class="text-lg text-gray-600">+229 01 66 28 24 28</p></div></div></div></div></div></section>
+    </main>
+
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <nav class="flex justify-center flex-wrap gap-x-6 gap-y-2 mb-8 text-gray-300">
+                    <a href="#" class="hover:text-white" data-page="accueil">Accueil</a>
+                    <a href="#" class="hover:text-white" data-page="services">Services</a>
+                    <a href="#" class="hover:text-white" data-page="projets">Nos Projets</a>
+                    <a href="#" class="hover:text-white" data-page="a-propos">À Propos</a>
+                    <a href="#" class="hover:text-white" data-page="contact">Contact</a>
+                </nav>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter"></i></a>
+                    <a href="https://wa.me/2290166282428" target="_blank" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.1-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg></a>
+                </div></div>
+            </div>
+            <div class="mt-12 pt-6 border-t border-gray-700 text-center text-gray-500"><p>&copy; 2025 JEEBA IMÔLÊ BTP & HYDRAULIQUE. Tous droits réservés.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        // Activation des icônes Lucide
+        lucide.createIcons();
+
+        // Logique de navigation multi-pages
+        const allNavLinks = document.querySelectorAll('.nav-link, .nav-link-mobile, a[data-page]');
+        const pages = document.querySelectorAll('.page-section');
+        const desktopNavLinks = document.querySelectorAll('#desktop-nav .nav-link');
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu .nav-link-mobile');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuButton = document.getElementById('menu-button');
+
+        function switchPage(pageId) {
+            pages.forEach(page => {
+                page.style.display = 'none';
+                page.classList.remove('active');
+            });
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.style.display = 'block';
+                targetPage.classList.add('active');
+            }
+
+            desktopNavLinks.forEach(link => {
+                link.classList.toggle('active', link.dataset.page === pageId);
+            });
+            mobileNavLinks.forEach(link => {
+                const isActive = link.dataset.page === pageId;
+                link.classList.toggle('active', isActive);
+                link.classList.toggle('bg-gray-100', isActive);
+            });
+            
+            mobileMenu.classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        allNavLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.dataset.page;
+                if (pageId) {
+                    switchPage(pageId);
+                }
+            });
+        });
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Afficher la page d'accueil par défaut au chargement
+        document.addEventListener('DOMContentLoaded', () => {
+             switchPage('accueil');
+        });
+    </script>
+
+</body>
+</html>
